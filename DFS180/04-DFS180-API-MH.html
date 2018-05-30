@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<!--
+==============================================================================
+           "GitHub HTML5 Pandoc Template" v2.1 — by Tristano Ajmone           
+==============================================================================
+Copyright © Tristano Ajmone, 2017, MIT License (MIT). Project's home:
+
+- https://github.com/tajmone/pandoc-goodies
+
+The CSS in this template reuses source code taken from the following projects:
+
+- GitHub Markdown CSS: Copyright © Sindre Sorhus, MIT License (MIT):
+  https://github.com/sindresorhus/github-markdown-css
+
+- Primer CSS: Copyright © 2016-2017 GitHub Inc., MIT License (MIT):
+  http://primercss.io/
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The MIT License 
+
+Copyright (c) Tristano Ajmone, 2017 (github.com/tajmone/pandoc-goodies)
+Copyright (c) Sindre Sorhus <sindresorhus@gmail.com> (sindresorhus.com)
+Copyright (c) 2017 GitHub Inc.
+
+"GitHub Pandoc HTML5 Template" is Copyright (c) Tristano Ajmone, 2017, released
+under the MIT License (MIT); it contains readaptations of substantial portions
+of the following third party softwares:
+
+(1) "GitHub Markdown CSS", Copyright (c) Sindre Sorhus, MIT License (MIT).
+(2) "Primer CSS", Copyright (c) 2016 GitHub Inc., MIT License (MIT).
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+==============================================================================-->
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>DFS180 - M7 - Public Message Interface</title>
+  <style type="text/css">
+.markdown-body{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;color:#24292e;font-family:-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";font-size:16px;line-height:1.5;word-wrap:break-word;box-sizing:border-box;min-width:200px;max-width:980px;margin:0 auto;padding:45px}.markdown-body a{color:#0366d6;background-color:transparent;text-decoration:none;-webkit-text-decoration-skip:objects}.markdown-body a:active,.markdown-body a:hover{outline-width:0}.markdown-body a:hover{text-decoration:underline}.markdown-body a:not([href]){color:inherit;text-decoration:none}.markdown-body strong{font-weight:600}.markdown-body h1,.markdown-body h2,.markdown-body h3,.markdown-body h4,.markdown-body h5,.markdown-body h6{margin-top:24px;margin-bottom:16px;font-weight:600;line-height:1.25}.markdown-body h1{font-size:2em;margin:.67em 0;padding-bottom:.3em;border-bottom:1px solid #eaecef}.markdown-body h2{padding-bottom:.3em;font-size:1.5em;border-bottom:1px solid #eaecef}.markdown-body h3{font-size:1.25em}.markdown-body h4{font-size:1em}.markdown-body h5{font-size:.875em}.markdown-body h6{font-size:.85em;color:#6a737d}.markdown-body img{border-style:none}.markdown-body svg:not(:root){overflow:hidden}.markdown-body hr{box-sizing:content-box;height:.25em;margin:24px 0;padding:0;overflow:hidden;background-color:#e1e4e8;border:0}.markdown-body hr::before{display:table;content:""}.markdown-body hr::after{display:table;clear:both;content:""}.markdown-body input{margin:0;overflow:visible;font:inherit;font-family:inherit;font-size:inherit;line-height:inherit}.markdown-body [type=checkbox]{box-sizing:border-box;padding:0}.markdown-body *{box-sizing:border-box}.markdown-body blockquote{margin:0}.markdown-body ol,.markdown-body ul{padding-left:2em}.markdown-body ol ol,.markdown-body ul ol{list-style-type:lower-roman}.markdown-body ol ol,.markdown-body ol ul,.markdown-body ul ol,.markdown-body ul ul{margin-top:0;margin-bottom:0}.markdown-body ol ol ol,.markdown-body ol ul ol,.markdown-body ul ol ol,.markdown-body ul ul ol{list-style-type:lower-alpha}.markdown-body li>p{margin-top:16px}.markdown-body li+li{margin-top:.25em}.markdown-body dd{margin-left:0}.markdown-body dl{padding:0}.markdown-body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:600}.markdown-body dl dd{padding:0 16px;margin-bottom:16px}.markdown-body code{font-family:SFMono-Regular,Consolas,"Liberation Mono",Menlo,Courier,monospace}.markdown-body pre{font:12px SFMono-Regular,Consolas,"Liberation Mono",Menlo,Courier,monospace;word-wrap:normal}.markdown-body blockquote,.markdown-body dl,.markdown-body ol,.markdown-body p,.markdown-body pre,.markdown-body table,.markdown-body ul{margin-top:0;margin-bottom:16px}.markdown-body blockquote{padding:0 1em;color:#6a737d;border-left:.25em solid #dfe2e5}.markdown-body blockquote>:first-child{margin-top:0}.markdown-body blockquote>:last-child{margin-bottom:0}.markdown-body table{display:block;width:100%;overflow:auto;border-spacing:0;border-collapse:collapse}.markdown-body table th{font-weight:600}.markdown-body table td,.markdown-body table th{padding:6px 13px;border:1px solid #dfe2e5}.markdown-body table tr{background-color:#fff;border-top:1px solid #c6cbd1}.markdown-body table tr:nth-child(2n){background-color:#f6f8fa}.markdown-body img{max-width:100%;box-sizing:content-box;background-color:#fff}.markdown-body code{padding:.2em 0;margin:0;font-size:85%;background-color:rgba(27,31,35,.05);border-radius:3px}.markdown-body code::after,.markdown-body code::before{letter-spacing:-.2em;content:"\00a0"}.markdown-body pre>code{padding:0;margin:0;font-size:100%;word-break:normal;white-space:pre;background:0 0;border:0}.markdown-body .highlight{margin-bottom:16px}.markdown-body .highlight pre{margin-bottom:0;word-break:normal}.markdown-body .highlight pre,.markdown-body pre{padding:16px;overflow:auto;font-size:85%;line-height:1.45;background-color:#f6f8fa;border-radius:3px}.markdown-body pre code{display:inline;max-width:auto;padding:0;margin:0;overflow:visible;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}.markdown-body pre code::after,.markdown-body pre code::before{content:normal}.markdown-body .full-commit .btn-outline:not(:disabled):hover{color:#005cc5;border-color:#005cc5}.markdown-body kbd{box-shadow:inset 0 -1px 0 #959da5;display:inline-block;padding:3px 5px;font:11px/10px SFMono-Regular,Consolas,"Liberation Mono",Menlo,Courier,monospace;color:#444d56;vertical-align:middle;background-color:#fcfcfc;border:1px solid #c6cbd1;border-bottom-color:#959da5;border-radius:3px;box-shadow:inset 0 -1px 0 #959da5}.markdown-body :checked+.radio-label{position:relative;z-index:1;border-color:#0366d6}.markdown-body .task-list-item{list-style-type:none}.markdown-body .task-list-item+.task-list-item{margin-top:3px}.markdown-body .task-list-item input{margin:0 .2em .25em -1.6em;vertical-align:middle}.markdown-body::before{display:table;content:""}.markdown-body::after{display:table;clear:both;content:""}.markdown-body>:first-child{margin-top:0!important}.markdown-body>:last-child{margin-bottom:0!important}.Alert,.Error,.Note,.Success,.Warning{padding:11px;margin-bottom:24px;border-style:solid;border-width:1px;border-radius:4px}.Alert p,.Error p,.Note p,.Success p,.Warning p{margin-top:0}.Alert p:last-child,.Error p:last-child,.Note p:last-child,.Success p:last-child,.Warning p:last-child{margin-bottom:0}.Alert{color:#246;background-color:#e2eef9;border-color:#bac6d3}.Warning{color:#4c4a42;background-color:#fff9ea;border-color:#dfd8c2}.Error{color:#911;background-color:#fcdede;border-color:#d2b2b2}.Success{color:#22662c;background-color:#e2f9e5;border-color:#bad3be}.Note{color:#2f363d;background-color:#f6f8fa;border-color:#d5d8da}.Alert h1,.Alert h2,.Alert h3,.Alert h4,.Alert h5,.Alert h6{color:#246;margin-bottom:0}.Warning h1,.Warning h2,.Warning h3,.Warning h4,.Warning h5,.Warning h6{color:#4c4a42;margin-bottom:0}.Error h1,.Error h2,.Error h3,.Error h4,.Error h5,.Error h6{color:#911;margin-bottom:0}.Success h1,.Success h2,.Success h3,.Success h4,.Success h5,.Success h6{color:#22662c;margin-bottom:0}.Note h1,.Note h2,.Note h3,.Note h4,.Note h5,.Note h6{color:#2f363d;margin-bottom:0}.Alert h1:first-child,.Alert h2:first-child,.Alert h3:first-child,.Alert h4:first-child,.Alert h5:first-child,.Alert h6:first-child,.Error h1:first-child,.Error h2:first-child,.Error h3:first-child,.Error h4:first-child,.Error h5:first-child,.Error h6:first-child,.Note h1:first-child,.Note h2:first-child,.Note h3:first-child,.Note h4:first-child,.Note h5:first-child,.Note h6:first-child,.Success h1:first-child,.Success h2:first-child,.Success h3:first-child,.Success h4:first-child,.Success h5:first-child,.Success h6:first-child,.Warning h1:first-child,.Warning h2:first-child,.Warning h3:first-child,.Warning h4:first-child,.Warning h5:first-child,.Warning h6:first-child{margin-top:0}h1.title,p.subtitle{text-align:center}h1.title.followed-by-subtitle{margin-bottom:0}p.subtitle{font-size:1.5em;font-weight:600;line-height:1.25;margin-top:0;margin-bottom:16px;padding-bottom:.3em}div.line-block{white-space:pre-line}
+  </style>
+  <style type="text/css">code{white-space: pre;}</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<article class="markdown-body">
+<header>
+<h1 class="title">DFS180 - M7 - Public Message Interface</h1>
+</header>
+<hr>
+<nav id="TOC">
+<h1 class="toc-title">Contents</h1>
+<ul>
+<li><a href="#public-requests-and-responses"><span class="toc-section-number">1</span> Public Requests and Responses</a><ul>
+<li><a href="#general-requests-and-responses"><span class="toc-section-number">1.1</span> General Requests and Responses</a><ul>
+<li><a href="#system-info-response-systeminforesp"><span class="toc-section-number">1.1.1</span> System Info Response (SystemInfoResp)</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+<hr>
+<p><img src="data:image/jpeg;base64,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" /></p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">DFS180 - M7 - Public Message Interface</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">M7 Release 6.0.10</td>
+</tr>
+</tbody>
+</table>
+<p>Version 1.1.5 ———- – —————————————————————————</p>
+<p>Status Final</p>
+<p>Filename DFS180 - M7 6.0.10 - Public Message Interface (Schema 6.0) - v 1.1.5.docx</p>
+<p>Date 16/03/2018</p>
+<p>Author M7 Project Team</p>
+<p>Reviewer M7 Project Manager</p>
+<h1 id="public-requests-and-responses"><span class="header-section-number">1</span> Public Requests and Responses</h1>
+<p>The requests and responses described in this chapter are used for users without administrative privileges to communicate with the backend.</p>
+<h2 id="general-requests-and-responses"><span class="header-section-number">1.1</span> General Requests and Responses</h2>
+<p>The general requests and responses described in this chapter are used for login and logout to the backend system as well as for responding to management requests.</p>
+<h3 id="system-info-response-systeminforesp"><span class="header-section-number">1.1.1</span> System Info Response (SystemInfoResp)</h3>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">SystemInfoResp</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Type:</td>
+<td>Inquiry Response</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Response to:</td>
+<td>SystemInfoReq (sent to private response queue see 3.1)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Broadcast:</td>
+<td>No</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Broadcast Routing Keys:</td>
+<td>---</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Roles:</td>
+<td>&lt;All&gt;</td>
+</tr>
+</tbody>
+</table>
+<p>The System Info Response returns general information about the backend system as reply to a System Info Request.</p>
+<table>
+<colgroup>
+<col style="width: 8%"></col>
+<col style="width: 5%"></col>
+<col style="width: 1%"></col>
+<col style="width: 2%"></col>
+<col style="width: 4%"></col>
+<col style="width: 59%"></col>
+<col style="width: 18%"></col>
+</colgroup>
+<thead>
+<tr class="header">
+<th>XML Tag</th>
+<th>Type</th>
+<th>m/o</th>
+<th>No.</th>
+<th>Data Type</th>
+<th>Short description</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>SystemInfoResp</strong></td>
+<td>SE</td>
+<td></td>
+<td></td>
+<td>Structure</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>backendVersion</td>
+<td>A</td>
+<td>m</td>
+<td></td>
+<td>String(255)</td>
+<td>The version number of the backend system.</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>backendTimeZone</td>
+<td>A</td>
+<td>m</td>
+<td></td>
+<td>String(255)</td>
+<td>The time zone identifier of the time zone the backend system runs in.</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>backendMarketTimeZone</td>
+<td>A</td>
+<td>m</td>
+<td></td>
+<td>String(255)</td>
+<td>The time zone identifier of the time zone the market is operated in. This time zone is used on backend side to generate time zone related information like contract short names.</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>contractStoreTimeInDays</td>
+<td>A</td>
+<td>m</td>
+<td></td>
+<td>Integer</td>
+<td>Number of days that contracts are made available in the system (today included)</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>appVersionActual</td>
+<td>A</td>
+<td>o</td>
+<td></td>
+<td>String(32)</td>
+<td>Contains actual version for application identified by app-id message property in requesting message (SysInfoReq). This may be used on client side to check if up-to-date application is used.</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>maxOrders</td>
+<td>A</td>
+<td>m</td>
+<td> </td>
+<td>Integer</td>
+<td>maximum number of orders that are allowed to be send within one order entry/modify message</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>maxQuotes</td>
+<td>A</td>
+<td>m</td>
+<td> </td>
+<td>Integer</td>
+<td>maximum number of quotes that are allowed to be send within one order entry/modify message (order types Q and W)</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>capabilities</td>
+<td>A</td>
+<td>o</td>
+<td>0..n</td>
+<td>String(255)</td>
+<td><p>List of backend features available. If the feature is not in the list, it is disabled on backend side.</p>
+<p>Possible values:</p>
+<p><strong>“SETTLEMENT”</strong>: Update Settlement Information message is supported by the system (see <a href="#_Toc317612050">7.2.3</a>) and trade settlement status functionality is available.</p>
+<p><strong>“LINKED-ORDERS”</strong>: See 6.2.1 Order Entry (OrdrEntry) for the description.</p>
+<p><strong>“QUOTE-ORDERS”</strong>: Mass Quote requests are supported by the system.</p>
+<p><strong>“QUOTE-REQUESTS”</strong>: Order Quote request are supported by the system (see 6.4.31).</p>
+<p><strong>“OPEN-CLOSE-INDICATOR”</strong>: Open-close indicator is supported in the Order entry and following messages (see 6.2.1).</p>
+<p><strong>“TRADING-LIMIT”</strong>: Cash limit requests are supported by the system (see 6.4.5).</p></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>allowedClearingAcctTypes</td>
+<td>A</td>
+<td>o</td>
+<td></td>
+<td>String(255)</td>
+<td><p>Comma separated valid values for “clearingAcctType” attribute in e.g. OrdrEntry message.</p>
+<p>Example (spot markets): “<strong>A,P</strong>”</p></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><strong><em>StandardHeader</em></strong></td>
+<td><em>SE</em></td>
+<td><em>m</em></td>
+<td></td>
+<td><em>Structure</em></td>
+<td><em>Standard header of each message. Please see</em> <em>5.1.3.</em></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><strong>RequestLimitList</strong></td>
+<td>SE</td>
+<td>m</td>
+<td>1</td>
+<td>SE</td>
+<td>List of request limits</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><strong>RequestLimit</strong></td>
+<td>SE</td>
+<td>m</td>
+<td>0..N</td>
+<td>SE</td>
+<td>Request limit</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>message</td>
+<td>A</td>
+<td>m</td>
+<td></td>
+<td>String(255)</td>
+<td>Message name (eg. AllUsersReq)</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>duration</td>
+<td>A</td>
+<td>o</td>
+<td></td>
+<td>Integer</td>
+<td>Limit duration in seconds (eg. 60 for short term limits)</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>rate</td>
+<td>A</td>
+<td>o</td>
+<td></td>
+<td>Integer</td>
+<td>The value of the limit (eg. 1)</td>
+</tr>
+</tbody>
+</table>
+<p>Table 7: Message layout of a System Info Response.</p>
+</article>
+</body>
+</html>
