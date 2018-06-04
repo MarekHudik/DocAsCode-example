@@ -1,1 +1,0 @@
-docker run -w /foo -v `pwd`:/foo amra/documentation-as-code pandoc --self-contained --standalone --number-sections --table-of-contents 02-DFS180-API-MH-raw.md -o 02-DFS180-API-MH-raw.html #--template template 
