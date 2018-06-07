@@ -16,7 +16,7 @@ author: Marek Hudik
 
 ---
 # Markdown
-- text &rarr html
+- text &rarr; html
 - lightweight markup language
 - flavors
 
@@ -72,10 +72,25 @@ Git tools
   - Intellij Idea
 
 ---
+  # hypothes.is
+  - Allow external comments
+  - example: https://web.hypothes.is/faq/
+  - for html and pdf
+  - just include
+  &lt;script&nbsp;src="https&colon;//hypothes.is/embed.js"&nbsp;async>&lt;/script>
+
+---
 # Schema
 ![](image/schema.png)
 
 ---
+# Comparison
+- MS Word
+- MediaWiki
+- Conluence
+- github + md
+
+----
 
 |                  | MS Word | Media Wiki | Conflu ence | github +md                  |
 |------------------|---------|-----------|------------|----------------------------|
@@ -103,8 +118,5 @@ Git tools
 | learning curve | &starf;&starf;&starf;&starf; | &starf;&starf;&starf; | &starf;&starf;&starf;&starf; | &starf; |
 
 ---
-# hypothes.is
-- Allow external comments
-- example: https://web.hypothes.is/faq/
-- just include: <script src="https://hypothes.is/embed.js" async></script>
-- for html and pdf
+# End
+Marek Hudik
