@@ -1,0 +1,10 @@
+graph LR;
+    init[initial<br/>conversion] --> local;
+    local --> |commit<br/>& push|github;
+    local --> |test manual build<br/>in docker image|local;
+    github --> |trigger|jenkins[jenkins<br/>or travis-ci<br/>or circle-ci];
+    jenkins --> |starts|docker[docker image<br/>with pandoc and plugins];
+    docker --> |md build to<br/>html and pdf|jenkins;
+    template[html template] --> docker;
+    jenkins --> aws[aws s3<br/>or webserver];
+    aws --> |customer comments<br/>using hypothes.is|aws;
