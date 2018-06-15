@@ -1,0 +1,16 @@
+graph LR;
+    init[initial<br/>conversion<br/><b>pandoc</b>] --> local;
+    subgraph functional
+        local[local edit<br/><b>Atom</b>] --> |commit<br/>& push|github;
+    end
+    local --> |test manual build<br/>in docker image|local;
+    subgraph development
+        github[Version Control<br/><b>github</b>] --> |trigger|jenkins[jenkins];
+        jenkins[Continuos delivery<br/><b>jenkins</b>] --> |starts|build[compilation<br/><b>docker image<br/>with pandoc and plugins</b>];
+        build --> |md build to<br/>html and pdf|jenkins;
+        template[visual<br/><b>html template</b>] --> build;
+    end
+    jenkins --> aws[web<br/><b>aws s3</b>];
+    subgraph operations
+        aws --> |customer comments<br/>using hypothes.is|aws;
+    end

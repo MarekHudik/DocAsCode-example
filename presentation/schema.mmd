@@ -1,3 +1,4 @@
+```mermaid
 graph LR;
     init[initial<br/>conversion] --> local;
     local --> |commit<br/>& push|github;
@@ -8,3 +9,4 @@ graph LR;
     template[html template] --> docker;
     jenkins --> aws[aws s3<br/>or webserver];
     aws --> |customer comments<br/>using hypothes.is|aws;
+```
